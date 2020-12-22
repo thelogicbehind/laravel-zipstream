@@ -16,7 +16,7 @@ class ZipStreamServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('zipstream.php'),
+                __DIR__.'/../config/config.php' => app()->basePath() . '/config/' . 'zipstream.php',
             ], 'config');
         }
     }
